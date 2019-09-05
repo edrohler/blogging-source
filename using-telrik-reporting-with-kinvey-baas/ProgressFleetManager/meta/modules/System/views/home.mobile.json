@@ -1,0 +1,210 @@
+{
+    "actionBar": true,
+    "actionBarTitle": "",
+    "annotations": {
+        "dataSources": {
+            "name": "dataSourceName"
+        }
+    },
+    "authorization": {
+        "allowedRoles": []
+    },
+    "children": [
+        {
+            "absoluteLayout": {},
+            "appearanceStyles": {
+                "backgroundColor": null,
+                "color": null
+            },
+            "boxStyles": {
+                "margin": "",
+                "padding": "",
+                "size": {
+                    "height": "",
+                    "width": ""
+                }
+            },
+            "children": [
+                {
+                    "absoluteLayout": {},
+                    "appearanceStyles": {
+                        "backgroundColor": null,
+                        "color": null
+                    },
+                    "boxStyles": {
+                        "margin": "",
+                        "padding": "",
+                        "size": {
+                            "height": "",
+                            "width": ""
+                        }
+                    },
+                    "children": [
+                        {
+                            "absoluteLayout": {},
+                            "appearanceStyles": {
+                                "backgroundColor": null,
+                                "color": null
+                            },
+                            "boxStyles": {
+                                "margin": "",
+                                "padding": "",
+                                "size": {
+                                    "height": "",
+                                    "width": ""
+                                }
+                            },
+                            "classList": "logo",
+                            "customProperties": [],
+                            "dockLayout": {},
+                            "flexboxLayout": {
+                                "alignSelf": "stretch",
+                                "flexWrapBefore": false
+                            },
+                            "gridLayout": {
+                                "col": null,
+                                "colSpan": null,
+                                "row": null,
+                                "rowSpan": null
+                            },
+                            "id": "mobileimage0",
+                            "loadMode": "async",
+                            "local": "logo_default_login.png",
+                            "platform": "mobile",
+                            "schemaVersion": "1.0",
+                            "src": "",
+                            "stretch": "aspectFit",
+                            "type": "mobile-image",
+                            "uniqueID": "c7a6f8f2-667a-4201-8410-39caa70c353e"
+                        },
+                        {
+                            "absoluteLayout": {},
+                            "appearanceStyles": {
+                                "backgroundColor": null,
+                                "color": null
+                            },
+                            "boxStyles": {
+                                "margin": "",
+                                "padding": "",
+                                "size": {
+                                    "height": "",
+                                    "width": ""
+                                }
+                            },
+                            "classList": "h2 -center",
+                            "customProperties": [],
+                            "dockLayout": {},
+                            "flexboxLayout": {
+                                "alignSelf": "stretch",
+                                "flexWrapBefore": false
+                            },
+                            "gridLayout": {
+                                "col": null,
+                                "colSpan": null,
+                                "row": null,
+                                "rowSpan": null
+                            },
+                            "id": "mobilelabel0",
+                            "platform": "mobile",
+                            "schemaVersion": "1.0",
+                            "text": "Welcome to Kinvey Studio!",
+                            "textWrap": true,
+                            "type": "mobile-label",
+                            "uniqueID": "371c33db-5f14-4805-9508-f27789ede4d7"
+                        },
+                        {
+                            "absoluteLayout": {},
+                            "appearanceStyles": {
+                                "backgroundColor": null,
+                                "color": null
+                            },
+                            "boxStyles": {
+                                "margin": "",
+                                "padding": "",
+                                "size": {
+                                    "height": "",
+                                    "width": ""
+                                }
+                            },
+                            "classList": "h3",
+                            "customProperties": [],
+                            "dockLayout": {},
+                            "flexboxLayout": {
+                                "alignSelf": "stretch",
+                                "flexWrapBefore": false
+                            },
+                            "gridLayout": {
+                                "col": null,
+                                "colSpan": null,
+                                "row": null,
+                                "rowSpan": null
+                            },
+                            "id": "mobilelabel1",
+                            "platform": "mobile",
+                            "schemaVersion": "1.0",
+                            "text": "Get native performance and UX for iOS, Android and Web apps from a single cross-platform Angular code base.",
+                            "textWrap": true,
+                            "type": "mobile-label",
+                            "uniqueID": "20135c7f-5997-4453-b0ac-b5b217cb29b6"
+                        }
+                    ],
+                    "classList": "",
+                    "customProperties": [],
+                    "dockLayout": {},
+                    "flexboxLayout": {
+                        "alignSelf": "stretch",
+                        "flexWrapBefore": false
+                    },
+                    "gridLayout": {
+                        "col": null,
+                        "colSpan": null,
+                        "row": null,
+                        "rowSpan": null
+                    },
+                    "id": "mobilestacklayout0",
+                    "orientation": "Vertical",
+                    "platform": "mobile",
+                    "schemaVersion": "1.0",
+                    "type": "mobile-stack-layout",
+                    "uniqueID": "bf7ba5dd-4412-46f0-a766-862049ec8b08"
+                }
+            ],
+            "classList": "",
+            "customProperties": [],
+            "dockLayout": {},
+            "flexboxLayout": {
+                "alignSelf": "stretch",
+                "flexWrapBefore": false
+            },
+            "gridLayout": {
+                "col": null,
+                "colSpan": null,
+                "row": null,
+                "rowSpan": null
+            },
+            "id": "mobilescrollview0",
+            "orientation": "Vertical",
+            "platform": "mobile",
+            "schemaVersion": "1.0",
+            "type": "mobile-scroll-view",
+            "uniqueID": "6aee0f78-b32e-47bd-95c7-03258180e29f"
+        }
+    ],
+    "dataSources": [],
+    "events": {
+        "hideEventHandler": "onHide",
+        "initEventHandler": "onInit",
+        "showEventHandler": "onShow"
+    },
+    "hidden": false,
+    "name": "home",
+    "platform": "mobile",
+    "schemaVersion": "1.0",
+    "swipeLeft": {
+        "allowBackNavigation": true
+    },
+    "swipeRight": true,
+    "type": "view",
+    "uniqueID": "e69066fb-1be4-4e93-95c7-03e755167c66",
+    "viewType": "mobile-blank"
+}

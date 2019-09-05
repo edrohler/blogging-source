@@ -1,0 +1,275 @@
+{
+    "authentication": {
+        "mobile": {
+            "authenticationType": "kinvey-auth",
+            "settings": {}
+        },
+        "web": {
+            "authenticationType": "kinvey-auth",
+            "settings": {}
+        }
+    },
+    "children": [
+        {
+            "clientSideProcessing": false,
+            "excludedFields": [
+                {
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "fieldType": "string",
+                            "label": "Creator",
+                            "name": "creator",
+                            "required": false
+                        }
+                    ],
+                    "label": "Acl",
+                    "name": "_acl",
+                    "required": false
+                },
+                {
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "fieldType": "date",
+                            "label": "Lmt",
+                            "name": "lmt",
+                            "required": false
+                        },
+                        {
+                            "fieldType": "date",
+                            "label": "Ect",
+                            "name": "ect",
+                            "required": false
+                        }
+                    ],
+                    "label": "Kmd",
+                    "name": "_kmd",
+                    "required": false
+                }
+            ],
+            "fields": [
+                {
+                    "fieldType": "string",
+                    "label": "Id",
+                    "name": "_id",
+                    "required": false
+                },
+                {
+                    "fieldType": "boolean",
+                    "label": "Pass",
+                    "name": "pass",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Description",
+                    "name": "description",
+                    "required": false
+                },
+                {
+                    "fieldType": "number",
+                    "label": "Mileage",
+                    "name": "mileage",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "VehicleId",
+                    "name": "vehicleId",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Date",
+                    "name": "date",
+                    "required": false
+                }
+            ],
+            "name": "inspections"
+        },
+        {
+            "clientSideProcessing": false,
+            "excludedFields": [
+                {
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "fieldType": "string",
+                            "label": "Creator",
+                            "name": "creator",
+                            "required": false
+                        }
+                    ],
+                    "label": "Acl",
+                    "name": "_acl",
+                    "required": false
+                },
+                {
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "fieldType": "date",
+                            "label": "Lmt",
+                            "name": "lmt",
+                            "required": false
+                        },
+                        {
+                            "fieldType": "date",
+                            "label": "Ect",
+                            "name": "ect",
+                            "required": false
+                        }
+                    ],
+                    "label": "Kmd",
+                    "name": "_kmd",
+                    "required": false
+                }
+            ],
+            "fields": [
+                {
+                    "fieldType": "string",
+                    "label": "Id",
+                    "name": "_id",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "CaseNumber",
+                    "name": "caseNumber",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Type",
+                    "name": "type",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Status",
+                    "name": "status",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Subject",
+                    "name": "subject",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Priority",
+                    "name": "priority",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Description",
+                    "name": "description",
+                    "required": false
+                }
+            ],
+            "name": "tickets"
+        },
+        {
+            "clientSideProcessing": false,
+            "excludedFields": [
+                {
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "fieldType": "string",
+                            "label": "Creator",
+                            "name": "creator",
+                            "required": false
+                        }
+                    ],
+                    "label": "Acl",
+                    "name": "_acl",
+                    "required": false
+                },
+                {
+                    "fieldType": "object",
+                    "fields": [
+                        {
+                            "fieldType": "date",
+                            "label": "Lmt",
+                            "name": "lmt",
+                            "required": false
+                        },
+                        {
+                            "fieldType": "date",
+                            "label": "Ect",
+                            "name": "ect",
+                            "required": false
+                        }
+                    ],
+                    "label": "Kmd",
+                    "name": "_kmd",
+                    "required": false
+                }
+            ],
+            "fields": [
+                {
+                    "fieldType": "string",
+                    "label": "Id",
+                    "name": "_id",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Image",
+                    "name": "image",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "RegistrationPlate",
+                    "name": "registrationPlate",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Vin",
+                    "name": "vin",
+                    "required": false
+                },
+                {
+                    "fieldType": "number",
+                    "label": "Year",
+                    "name": "year",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Model",
+                    "name": "model",
+                    "required": false
+                },
+                {
+                    "fieldType": "string",
+                    "label": "Make",
+                    "name": "make",
+                    "required": false
+                }
+            ],
+            "name": "vehicles"
+        }
+    ],
+    "kinveyApp": {
+        "id": "57dd201e6c8343d59d9104f8292d14de",
+        "name": "ProgressFleetManager"
+    },
+    "kinveyAppEnvironment": {
+        "appSecret": "240daca734564b48b2ed01fb4c91dbd0",
+        "id": "kid_BJ7NzULMr",
+        "masterSecret": "a7837e946873497faf7a712d538ef15a",
+        "name": "Development"
+    },
+    "name": "DefaultDataProvider",
+    "schemaVersion": "1.0",
+    "serviceUri": "https://baas.kinvey.com",
+    "type": "kinvey-data-provider",
+    "uniqueID": "4253d11b-dca8-4517-8926-29a1bd7d91b9"
+}

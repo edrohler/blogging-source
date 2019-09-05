@@ -1,0 +1,39 @@
+{
+    "authorization": {
+        "roles": []
+    },
+    "build": {
+        "debug": {
+            "baseHref": "/"
+        },
+        "release": {
+            "aot": true,
+            "baseHref": "/"
+        }
+    },
+    "children": [],
+    "defaultLangaugeCulture": "en-US",
+    "defaultLanguageLabel": "English",
+    "description": "Progress Vehicle Fleet Manager Application",
+    "layout": {},
+    "mobileNavigation": [],
+    "mobileOfflineSupport": false,
+    "mobileTheme": "light",
+    "name": "ProgressFleetManager",
+    "ripple": false,
+    "schemaVersion": "1.2.0",
+    "startupViewInfo": {},
+    "targetFramework": "Angular",
+    "theme": "metro",
+    "type": "app",
+    "uniqueID": "eeefc468-9433-4b67-a81a-c51bbeda0057",
+    "webNavigation": [
+        {
+            "name": "landing-page",
+            "type": "view",
+            "uniqueID": "21b15bea-818b-469f-8659-8665d43f54cb",
+            "moduleName": "System"
+        }
+    ],
+    "webOfflineSupport": false
+}
