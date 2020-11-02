@@ -1,0 +1,35 @@
+﻿@page
+
+@{
+    ViewData["Title"] = "Web Report Designer";
+}
+
+@section styles {
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+}
+
+@section scripts {
+
+    <script src="api/reportdesigner/resources/js/telerikReportViewer"></script>
+    <script src="api/reportdesigner/designerresources/js/webReportDesigner"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#webReportDesigner").telerik_WebReportDesigner({
+                persistSession: false,
+                toolboxArea: {
+                    layout: "list"
+                },
+                serviceUrl: "api/reportdesigner/",
+                report: "Product Catalog.trdp"
+            }).data("telerik_WebDesigner");
+        });
+    </script>
+
+}
+
+<div id="webReportDesigner">
+    loading...
+</div>
