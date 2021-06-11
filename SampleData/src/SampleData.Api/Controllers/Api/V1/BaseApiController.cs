@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace SampleData.Api.Controllers.Api.V1
 {
-    [Route("api/v1/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class BaseApiController : ControllerBase
     {
         internal readonly SampleDataService Service;

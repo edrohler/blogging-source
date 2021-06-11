@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using SampleData.Api.Models;
 
 namespace SampleData.Api
 {
@@ -39,7 +41,38 @@ namespace SampleData.Api
 
             services.AddControllers();
 
-            services.AddSwaggerGen();
+            services.AddApiVersioning(
+                options =>
+                {
+                    options.ReportApiVersions = true;
+                });
+
+            services.AddSwaggerGen(opts =>
+            {
+                string title = "Sample Data API";
+                string desc = "A simple web api with data.";
+
+                OpenApiLicense license = new()
+                {
+                    Name = "MIT"
+                };
+
+                OpenApiContact contact = new()
+                {
+                    Name = "Eric Rohler",
+                    Email = "development@ericrohler.com",
+                    Url = new Uri("https://www.ericrohler.com")
+                };
+
+                opts.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = $"{title}",
+                    Description = desc,
+                    License = license,
+                    Contact = contact
+                });
+            });
         }
 
         public void Configure(IApplicationBuilder app)
@@ -53,7 +86,7 @@ namespace SampleData.Api
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SampleData V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample Data API");
                 c.RoutePrefix = string.Empty;
             });
 

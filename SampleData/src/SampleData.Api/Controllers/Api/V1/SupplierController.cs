@@ -15,10 +15,25 @@ namespace SampleData.Api.Controllers.Api.V1
             : base(logger)
         { }
 
+        /// <summary>
+        /// Gets all Categories
+        /// </summary>
+        /// <returns>All available categories.</returns>
+        /// <response code="200">Successfully retreived caetegories.</response>
         [HttpGet]
-        public IEnumerable<Supplier> Get()
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(IEnumerable<Supplier>), 200)]
+        public IActionResult Get()
         {
-            return Service.GenerateSupplierData();
+            IEnumerable<Supplier> vm = Service.GenerateSupplierData();
+
+            return Ok(vm);
         }
+
+        //[HttpGet]
+        //public Supplier GetById(int id)
+        //{
+        //    return Service.GenerateSupplierData().Where(x => x.SupplierId == id).Single();
+        //}
     }
 }
