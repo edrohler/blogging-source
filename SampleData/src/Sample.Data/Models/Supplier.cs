@@ -8,5 +8,6 @@ namespace Sample.Data.Models
 {
     public class Supplier : AuditableEntity
     {
+        public string Name { get; set; }
     }
 }

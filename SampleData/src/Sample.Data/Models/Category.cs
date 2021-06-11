@@ -8,5 +8,6 @@ namespace Sample.Data.Models
 {
     public class Category : AuditableEntity
     {
+        public string Name { get; set; }
     }
 }

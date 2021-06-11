@@ -8,6 +8,10 @@ namespace Sample.Data.Services
 {
     public static class Context
     {
-        internal static Random RandGen = new();
+        public static Categories Categories = new();
+        public static Customers Customers = new();
+        public static Employees Employees = new();
+        public static Products Products = new();
+        public static Suppliers Suppliers = new();
     }
 }

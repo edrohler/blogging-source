@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sample.Data
 {
-    public static class Products
+    public class Products
     {
     }
 }

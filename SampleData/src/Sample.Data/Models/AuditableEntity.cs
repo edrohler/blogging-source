@@ -8,10 +8,10 @@ namespace Sample.Data.Models
 {
     public abstract class AuditableEntity
     {
-        public Guid Id { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public string CreatedBy { get; set; }
-        public DateTime UpdatedDate { get; set; }
-        public string UpdatedBy { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public DateTime CreatedDate { get; set; } = DateTime.Now.AddDays(-3);
+        public string CreatedBy { get; set; } = "SYSTEM";
+        public DateTime UpdatedDate { get; set; } = DateTime.Now;
+        public string UpdatedBy { get; set; } = "ADMIN";
     }
 }

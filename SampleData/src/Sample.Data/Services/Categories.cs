@@ -11,7 +11,10 @@ namespace Sample.Data
     {
         public IEnumerable<Category> GenerateCategories()
         {
-
+            return Enumerable.Range(1, 5).Select(i => new Category
+            {
+                Name = $"Category {i}"
+            });
         }
     }
 }
