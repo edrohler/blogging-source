@@ -8,5 +8,10 @@ namespace Sample.Data.Models
 {
     public class Employee : Person 
     {
+        public string Position { get; set; }
+        public DateTime StartDate { get; set; }
+        public double Salary { get; set; }
+        public int VacationTotal { get; set; }
+        public int VacationUsed { get; set; }
     }
 }
