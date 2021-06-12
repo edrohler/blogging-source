@@ -1,12 +1,10 @@
-﻿using Sample.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sample.Data.Services
+﻿namespace Sample.Data.Services
 {
+    using Sample.Data.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Products : BaseService
     {
         public static IEnumerable<Product> GetProducts(int count = 35)

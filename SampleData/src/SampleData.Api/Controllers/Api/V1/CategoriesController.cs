@@ -1,16 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Sample.Data;
-using Sample.Data.Models;
-using Sample.Data.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SampleData.Api.Controllers.Api.V1
+﻿namespace SampleData.Api.Controllers.Api.V1
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using Sample.Data.Models;
+    using Sample.Data.Services;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+
     public class CategoriesController : BaseApiController
     {
         public CategoriesController(ILogger<CategoriesController> logger)
@@ -28,11 +26,12 @@ namespace SampleData.Api.Controllers.Api.V1
         [ProducesResponseType(typeof(IEnumerable<Category>), 200)]
         public IActionResult Get()
         {
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} ");
             return Ok(Categories.GetCategories());
         }
 
         /// <summary>
-        /// Gets a single category.
+        /// Gets a single category by id
         /// </summary>
         /// <param name="id">The requested category identifier.</param>
         /// <returns>The requested category.</returns>
@@ -44,6 +43,7 @@ namespace SampleData.Api.Controllers.Api.V1
         [ProducesResponseType(404)]
         public IActionResult Get(string id)
         {
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} - params: id={id}");
             return Ok(Categories.GetCategories().Where(x => x.Id.ToString() == id).Single());
         }
 
@@ -63,6 +63,8 @@ namespace SampleData.Api.Controllers.Api.V1
         {
             Guid id = Guid.NewGuid();
             category.Id = id;
+
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} - params: category={category}");
             return CreatedAtAction(nameof(Get), new { id = category.Id }, category);
         }
     }

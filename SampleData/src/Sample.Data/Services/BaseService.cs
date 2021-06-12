@@ -1,12 +1,8 @@
-﻿using RandomNameGeneratorLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sample.Data.Services
+﻿namespace Sample.Data.Services
 {
+    using RandomNameGeneratorLibrary;
+    using System;
+
     public class BaseService
     {
         internal static Random RandomGenerator = new();

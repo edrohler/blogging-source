@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Sample.Data.Models;
-using Sample.Data.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SampleData.Api.Controllers.Api.V1
+﻿namespace SampleData.Api.Controllers.Api.V1
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using Sample.Data.Models;
+    using Sample.Data.Services;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+
     public class EmployeesController : BaseApiController
     {
         public EmployeesController(ILogger<EmployeesController> logger)
@@ -26,11 +25,12 @@ namespace SampleData.Api.Controllers.Api.V1
         [ProducesResponseType(typeof(IEnumerable<Employee>), 200)]
         public IActionResult Get()
         {
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} ");
             return Ok(Employees.GetEmployees());
         }
 
         /// <summary>
-        /// Gets a single employee by id.
+        /// Gets a single employee by id
         /// </summary>
         /// <param name="id">The requested employee identifier.</param>
         /// <returns>The requested employee.</returns>
@@ -42,6 +42,7 @@ namespace SampleData.Api.Controllers.Api.V1
         [ProducesResponseType(404)]
         public IActionResult Get(string id)
         {
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} - params: id={id}");
             return Ok(Employees.GetEmployees().Where(x => x.Id.ToString() == id));
         }
 
@@ -61,6 +62,7 @@ namespace SampleData.Api.Controllers.Api.V1
         {
             Guid id = Guid.NewGuid();
             employee.Id = id;
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} - params: employee={employee}");
             return CreatedAtAction(nameof(Get), new { id = employee.Id }, employee);
         }
     }

@@ -1,15 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Sample.Data.Models;
-using Sample.Data.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace SampleData.Api.Controllers.Api.V1
+﻿namespace SampleData.Api.Controllers.Api.V1
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+    using Sample.Data.Models;
+    using Sample.Data.Services;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+
     public class CustomersController : BaseApiController
     {
         public CustomersController(ILogger<CustomersController> logger)
@@ -26,11 +25,12 @@ namespace SampleData.Api.Controllers.Api.V1
         [ProducesResponseType(typeof(IEnumerable<Customer>), 200)]
         public IActionResult Get()
         {
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} ");
             return Ok(Customers.GetCustomers());
         }
 
         /// <summary>
-        /// Gets a single Customer by id.
+        /// Gets a single Customer by id
         /// </summary>
         /// <param name="id">The requested customer identifier.</param>
         /// <returns>The requested customer.</returns>
@@ -42,6 +42,7 @@ namespace SampleData.Api.Controllers.Api.V1
         [ProducesResponseType(404)]
         public IActionResult Get(string id)
         {
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} - params: id={id}");
             return Ok(Customers.GetCustomers().Where(x => x.Id.ToString() == id));
         }
 
@@ -61,6 +62,8 @@ namespace SampleData.Api.Controllers.Api.V1
         {
             Guid id = Guid.NewGuid();
             customer.Id = id;
+
+            Logger.LogInformation($"{DateTime.Now} - type: {GetType().Name} - method: {MethodBase.GetCurrentMethod()} - params: customer={customer}");
             return CreatedAtAction(nameof(Get), new { id = customer.Id }, customer);
         }
     }
