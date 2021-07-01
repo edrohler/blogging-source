@@ -1,0 +1,20 @@
+﻿@page "/"
+@inject HttpClient HttpClient;
+@using TBACS.BlazorGridCustomStyle.Shared
+
+<TelerikGrid Data="@Products" Pageable="true" PageSize="10">
+    <GridColumns>
+        <GridColumn Field="@(nameof(Product.Id))" />
+        <GridColumn Field="@(nameof(Product.Name))" Title="Product Name"/>
+        <GridColumn Field="@(nameof(Product.UnitPrice))" Title="Unit Price" DisplayFormat="{0:C}" />
+    </GridColumns>
+</TelerikGrid>
+
+@code {
+    List<Product> Products;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Products = await HttpClient.GetFromJsonAsync<List<Product>>("https://sampledataapi.azurewebsites.net/api/v1/Products");
+    }
+}
