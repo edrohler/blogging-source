@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
+$border-radius: 0px;
+$primary-palette-name: lightBlue;
+$secondary-palette-name: deepOrange;
+$theme-type: light;
+
+@import "~@progress/kendo-theme-material/dist/all.scss";
+
 .app-header>.project-name{
   text-align: left;
   letter-spacing: 0;
