@@ -1,18 +1,31 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBACS.BlazorGridCustomStyle.Client", "src\TBACS.BlazorGridCustomStyle\Client\TBACS.BlazorGridCustomStyle.Client.csproj", "{6421C508-436B-4D3E-8AAA-89B8925F8069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBACS.BlazorGridCustomStyle.Shared", "src\TBACS.BlazorGridCustomStyle\Shared\TBACS.BlazorGridCustomStyle.Shared.csproj", "{3173AA36-69FD-49BB-B1F1-502C7E78818B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6421C508-436B-4D3E-8AAA-89B8925F8069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6421C508-436B-4D3E-8AAA-89B8925F8069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6421C508-436B-4D3E-8AAA-89B8925F8069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6421C508-436B-4D3E-8AAA-89B8925F8069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3173AA36-69FD-49BB-B1F1-502C7E78818B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3173AA36-69FD-49BB-B1F1-502C7E78818B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3173AA36-69FD-49BB-B1F1-502C7E78818B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3173AA36-69FD-49BB-B1F1-502C7E78818B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A660B441-F153-4E8F-B68E-4734BA679187}
 	EndGlobalSection
 EndGlobal
