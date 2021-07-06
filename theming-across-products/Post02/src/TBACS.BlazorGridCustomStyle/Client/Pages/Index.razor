@@ -3,10 +3,21 @@
 @using TBACS.BlazorGridCustomStyle.Shared
 
 <TelerikGrid Data="@Products" Pageable="true" PageSize="10">
+    <GridToolBar>
+        <GridCommandButton Command="Add" Icon="add">Add New</GridCommandButton>
+    </GridToolBar>
     <GridColumns>
-        <GridColumn Field="@(nameof(Product.Id))" />
-        <GridColumn Field="@(nameof(Product.Name))" Title="Product Name"/>
-        <GridColumn Field="@(nameof(Product.UnitPrice))" Title="Unit Price" DisplayFormat="{0:C}" />
+        <GridColumn Field="@(nameof(Product.Id))" Visible="false" />
+        <GridColumn Field="@(nameof(Product.Name))" Title="Product Name" />
+        <GridColumn Field="@(nameof(Product.UnitPrice))" Title="Price" DisplayFormat="{0:C}" />
+        <GridColumn Field="@(nameof(Product.Discontinued))" Title="Discontinued" />
+        <GridColumn Field="@(nameof(Product.UnitsInStock))" Title="Units In Stock" />
+        <GridCommandColumn Title="Command">
+            <GridCommandButton Command="Save" ShowInEdit="true" Class="k-button-primary">Update</GridCommandButton>
+            <GridCommandButton Command="Edit" Class="k-button-primary">Edit</GridCommandButton>
+            <GridCommandButton Command="Delete">Remove</GridCommandButton>
+            <GridCommandButton Command="Cancel" ShowInEdit="true">Cancel</GridCommandButton>
+        </GridCommandColumn>
     </GridColumns>
 </TelerikGrid>
 
