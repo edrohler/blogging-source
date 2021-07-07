@@ -17,7 +17,7 @@ namespace TWACS.WpfNetCoreCustomStyleGrid
             InitializeComponent();
         }
 
-        public static async Task<List<Product>> GetData()
+        public static async Task<List<Product>> GetDataAsync()
         {
             string json = await new HttpClient().GetStringAsync("https://sampledataapi.azurewebsites.net/api/v1/Products");
             return JsonConvert.DeserializeObject<List<Product>>(json);
@@ -25,7 +25,7 @@ namespace TWACS.WpfNetCoreCustomStyleGrid
 
         private async void RadGridView1_Loaded(object sender, RoutedEventArgs e)
         {
-            RadGridView1.ItemsSource = await GetData();
+            RadGridView1.ItemsSource = await GetDataAsync();
         }
     }
 }
