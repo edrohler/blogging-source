@@ -1,0 +1,27 @@
+﻿<Window x:Class="TWACS.WpfNetCoreCustomStyleGrid.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                Title="MainWindow" Height="800" Width="700">
+    <Grid>
+        <telerik:RadGridView x:Name="RadGridView1" Loaded="RadGridView1_Loaded" AutoGenerateColumns="False" IsFilteringAllowed="False">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Id}" IsVisible="False" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Product Name" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding UnitPrice}" Header="Price" DataFormatString="{}{0:c}" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding Discontinued}" Header="Discontinued" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding UnitsInStock}" Header="Units In Stock" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <telerik:RadButton Content="Edit" Margin="0,0,10,0" />
+                                <telerik:RadButton Content="Cancel"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
+</Window>
