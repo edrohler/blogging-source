@@ -6,7 +6,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBACS.BlazorGridCustomStyle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBACS.BlazorGridCustomStyle.Shared", "src\TBACS.BlazorGridCustomStyle\Shared\TBACS.BlazorGridCustomStyle.Shared.csproj", "{3173AA36-69FD-49BB-B1F1-502C7E78818B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TWACS.WpfNetCoreCustomStyleGrid", "src\TWACS.WpfNetCoreCustomStyleGrid\TWACS.WpfNetCoreCustomStyleGrid.csproj", "{2BD8A52D-5672-4986-B90E-41D12C1E414C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TWACS.WpfNetCoreCustomStyleGrid", "src\TWACS.WpfNetCoreCustomStyleGrid\TWACS.WpfNetCoreCustomStyleGrid.csproj", "{2BD8A52D-5672-4986-B90E-41D12C1E414C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSWACS.ReportingRESTService", "src\MSWACS.ReportingRESTService\MSWACS.ReportingRESTService.csproj", "{19F0C71A-CEB3-4CE8-BC2E-80F4258E6D6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 		{2BD8A52D-5672-4986-B90E-41D12C1E414C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BD8A52D-5672-4986-B90E-41D12C1E414C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BD8A52D-5672-4986-B90E-41D12C1E414C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19F0C71A-CEB3-4CE8-BC2E-80F4258E6D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19F0C71A-CEB3-4CE8-BC2E-80F4258E6D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19F0C71A-CEB3-4CE8-BC2E-80F4258E6D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19F0C71A-CEB3-4CE8-BC2E-80F4258E6D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
