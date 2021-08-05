@@ -1,7 +1,57 @@
-﻿@layout TelerikLayout
+﻿@inherits LayoutComponentBase
 
-@inherits LayoutComponentBase
+@inject NavigationManager NavMgr
 
-<div>
-    @Body
-</div>
+<TelerikRootComponent>
+    <TelerikDrawer Data="@NavigablePages" @bind-Expanded="@IsExpaneded" Mode="@DrawerMode.Push" @ref="@DrawerRef" @bind-SelectedItem="@SelectedItem">
+        <Content>
+            <header class="top-row">
+                <TelerikButton OnClick="@(() => DrawerRef.ToggleAsync())" Icon="menu" Class="drawer-icon"></TelerikButton>
+                <h1>Administration</h1>
+            </header>
+            <main>
+                @Body
+            </main>
+        </Content>
+    </TelerikDrawer>
+</TelerikRootComponent>
+
+@code{
+    bool IsExpaneded { get; set; } = true;
+    DrawerItem SelectedItem { get; set; }
+    TelerikDrawer<DrawerItem> DrawerRef { get; set; }
+
+    List<DrawerItem> NavigablePages { get; set; } = new List<DrawerItem>
+    {
+        new DrawerItem { Text = "Home", Url = "/", Icon = "home" },
+        new DrawerItem { IsSeparator = true, Url=string.Empty },
+        new DrawerItem { Text = "Reports", Url = "reports", Icon = "subreport" },
+    };
+
+    protected override void OnInitialized()
+    {
+        string currPage = NavMgr.Uri;
+        DrawerItem ActivePage = NavigablePages.Where(p => p.Url.ToLowerInvariant() == GetCurrentPage().ToLowerInvariant()).FirstOrDefault();
+        if (ActivePage != null)
+        {
+            SelectedItem = ActivePage;
+        }
+
+        base.OnInitialized();
+    }
+
+    public string GetCurrentPage()
+    {
+        string uriWithoutQueryString = NavMgr.Uri.Split("?")[0];
+        string currPage = uriWithoutQueryString.Substring(Math.Min(NavMgr.Uri.Length, NavMgr.BaseUri.Length));
+        return string.IsNullOrWhiteSpace(currPage) ? "/" : currPage;
+    }
+
+    public class DrawerItem
+    {
+        public string Text { get; set; }
+        public string Url { get; set; }
+        public string Icon { get; set; }
+        public bool IsSeparator { get; set; }
+    }
+}
