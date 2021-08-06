@@ -18,22 +18,23 @@ namespace MSWACS.ReportingRESTService
 
         public IConfiguration Configuration { get; }
 
-    public void ConfigureServices(IServiceCollection services)
-    {
-        services.AddCors(opts =>
+        public void ConfigureServices(IServiceCollection services)
         {
-            opts.AddDefaultPolicy(p =>
+            services.AddCors(opts =>
             {
-                p.AllowAnyMethod();
-                p.AllowAnyHeader();
-                p.AllowAnyOrigin();
+                opts.AddDefaultPolicy(p =>
+                {
+                    p.AllowAnyMethod();
+                    p.AllowAnyHeader();
+                    p.AllowAnyOrigin();
+                });
             });
-        });
 
-        services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddNewtonsoftJson();
+            services.AddRazorPages();
 
-        // Configure dependencies for ReportsController.
-        services.TryAddSingleton<IReportServiceConfiguration>(sp =>
+            // Configure dependencies for ReportsController.
+            services.TryAddSingleton<IReportServiceConfiguration>(sp =>
             new ReportServiceConfiguration
             {
                 ReportingEngineConfiguration = sp.GetService<IConfiguration>(),
@@ -42,14 +43,17 @@ namespace MSWACS.ReportingRESTService
                 ReportSourceResolver = new UriReportSourceResolver(
                     System.IO.Path.Combine(sp.GetService<IWebHostEnvironment>().ContentRootPath, "Reports"))
             });
-    }
+        }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseWebAssemblyDebugging();
             }
+
+            app.UseHttpsRedirection();
 
             app.UseCors();
 
@@ -57,9 +61,15 @@ namespace MSWACS.ReportingRESTService
 
             app.UseAuthorization();
 
+            app.UseBlazorFrameworkFiles();
+
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllers();
+                endpoints.MapFallbackToFile("index.html");
             });
         }
     }

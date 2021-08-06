@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.13.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.8" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Telerik.Reporting" Version="15.1.21.616" />
     <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="15.1.21.616" />
@@ -15,6 +16,11 @@
 
   <ItemGroup>
     <Folder Include="Reports\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TBACS.BlazorGridCustomStyle\Client\TBACS.BlazorGridCustomStyle.Client.csproj" />
+    <ProjectReference Include="..\TBACS.BlazorGridCustomStyle\Shared\TBACS.BlazorGridCustomStyle.Shared.csproj" />
   </ItemGroup>
 
 </Project>
