@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace MSWACS.ReportingRESTService
+namespace TBACS.BlazorGridCustomStyle.Server
 {
     public class Program
     {
@@ -15,6 +15,7 @@ namespace MSWACS.ReportingRESTService
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStaticWebAssets();
                 });
     }
 }

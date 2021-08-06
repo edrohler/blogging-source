@@ -27,18 +27,18 @@
 
 @code {
 
-    public string SelectedReport { get; set; } = "Dashboard.trdp";
+    public string SelectedReport { get; set; }
     public List<string> ReportList { get; set; }
     public ReportViewer rv1;
+
     protected async override Task OnInitializedAsync()
     {
         ReportList = await HttpClient.GetFromJsonAsync<List<string>>("/api/files");
-        SelectedReport = ReportList.First();
+        SelectedReport = "Dashboard.trdp";
     }
 
     private async Task ReportSelection(object report)
     {
-        Console.Write(report.ToString());
         SelectedReport = report.ToString();
         await rv1.RefreshReportAsync();
     }

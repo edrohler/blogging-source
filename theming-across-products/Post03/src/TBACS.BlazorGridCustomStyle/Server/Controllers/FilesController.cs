@@ -7,13 +7,14 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MSWACS.ReportingRESTService.Controllers
+namespace TBACS.BlazorGridCustomStyle.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class FilesController : ControllerBase
     {
-        private IWebHostEnvironment WebHostEnvironment;
+        private readonly IWebHostEnvironment WebHostEnvironment;
+
         public FilesController(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
@@ -33,7 +34,7 @@ namespace MSWACS.ReportingRESTService.Controllers
             {
                 FileNames[i] = Files[i].Name;
             }
-               
+
             if (FileNames.Length > 0)
             {
                 return Ok(FileNames);

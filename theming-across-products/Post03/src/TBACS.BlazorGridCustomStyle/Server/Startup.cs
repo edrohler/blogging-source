@@ -1,16 +1,20 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using System.Linq;
 using Telerik.Reporting.Cache.File;
 using Telerik.Reporting.Services;
 
-namespace MSWACS.ReportingRESTService
+namespace TBACS.BlazorGridCustomStyle.Server
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -52,18 +56,20 @@ namespace MSWACS.ReportingRESTService
                 app.UseDeveloperExceptionPage();
                 app.UseWebAssemblyDebugging();
             }
-
-            app.UseHttpsRedirection();
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                //// The default HSTS value is 30 days.
+                //// You may want to change this for production scenarios.
+                //// See https://aka.ms/aspnetcore-hsts.
+                //app.UseHsts();
+            }
 
             app.UseCors();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
+            app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
-
             app.UseStaticFiles();
+            app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
