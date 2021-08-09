@@ -28,11 +28,13 @@ namespace TBACS.BlazorGridCustomStyle.Server.Controllers
 
             FileInfo[] Files = d.GetFiles("*.trdp");
 
-            string[] FileNames = new string[Files.Length];
+            string[] FileNames = new string[Files.Length + 1];
+
+            FileNames[0] = "Please Select a Report.";
 
             for (int i = 0; i < Files.Length; i++)
             {
-                FileNames[i] = Files[i].Name;
+                FileNames[i + 1] = Files[i].Name;
             }
 
             if (FileNames.Length > 0)
