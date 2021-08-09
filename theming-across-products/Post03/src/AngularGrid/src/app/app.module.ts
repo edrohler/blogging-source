@@ -17,11 +17,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GridComponent } from "./components/grid/grid.component";
+import { ReportsComponent } from './components/reports/reports.component';
+import { TelerikReportingModule } from '@progress/telerik-angular-report-viewer';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
     { path: 'grid', component: GridComponent },
+    { path: 'reports', component: ReportsComponent},
     { path: '**', redirectTo: 'home' }
 ];
 
@@ -31,7 +34,8 @@ const routes: Routes = [
         HeaderComponent,
         HomeComponent,
         GridComponent,
-        FooterComponent
+        FooterComponent,
+        ReportsComponent
     ],
     imports: [
       BrowserModule,
@@ -42,7 +46,8 @@ const routes: Routes = [
       GridModule,
       ChartsModule,
       RouterModule.forRoot(routes),
-      DropDownsModule, PopupModule, InputsModule
+      DropDownsModule, PopupModule, InputsModule,
+      TelerikReportingModule
   ],
     bootstrap: [AppComponent]
 })
