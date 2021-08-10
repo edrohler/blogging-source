@@ -42,6 +42,9 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Reference Include="Telerik.Reporting.Services.HttpClient">
+      <HintPath>C:\Program Files (x86)\Progress\Telerik Reporting R2 2021\Bin\Telerik.Reporting.Services.HttpClient.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Windows.Controls">
       <HintPath>bin\Telerik.Windows.Controls.dll</HintPath>
     </Reference>
