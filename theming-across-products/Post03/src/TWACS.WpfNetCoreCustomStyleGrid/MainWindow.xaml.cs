@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Navigation;
 using TBACS.BlazorGridCustomStyle.Shared;
 
 namespace TWACS.WpfNetCoreCustomStyleGrid
