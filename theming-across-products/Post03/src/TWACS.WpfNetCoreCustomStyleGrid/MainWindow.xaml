@@ -34,12 +34,19 @@
                     </telerik:RadGridView>
                 </telerik:RadTabItem>
                 <telerik:RadTabItem Header="Reports">
-                    <tr:ReportViewer x:Name="reportViewer1" HorizontalAlignment="Stretch" EnableAccessibility="False"
-							         ReportEngineConnection="engine=RestService;uri=https://localhost:44388/api/reports">
-                        <tr:ReportViewer.ReportSource>
-                            <telerikReporting:UriReportSource Uri="Dashboard.trdp" />
-                        </tr:ReportViewer.ReportSource>
-                    </tr:ReportViewer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50px"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <telerik:RadComboBox x:Name="RadComboBox1" Grid.Row="0" Loaded="RadComboBox1_Loaded" SelectionChanged="RadComboBox1_SelectionChanged"></telerik:RadComboBox>
+                        <tr:ReportViewer x:Name="reportViewer1" Grid.Row="1" HorizontalAlignment="Stretch" EnableAccessibility="False"
+							         ReportEngineConnection="engine=RestService;uri=https://localhost:44380/api/reports">
+                            <tr:ReportViewer.ReportSource>
+                                <telerikReporting:UriReportSource Uri="Dashboard.trdp" />
+                            </tr:ReportViewer.ReportSource>
+                        </tr:ReportViewer>
+                    </Grid>
                 </telerik:RadTabItem>
             </telerik:RadTabControl.Items>
         </telerik:RadTabControl>

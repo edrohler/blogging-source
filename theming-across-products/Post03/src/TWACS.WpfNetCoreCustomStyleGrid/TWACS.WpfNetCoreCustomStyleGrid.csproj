@@ -29,6 +29,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Telerik.Reporting.Services.HttpClient" Version="15.1.21.616" />
     <PackageReference Include="Telerik.ReportViewer.Wpf" Version="15.1.21.616" />
     <PackageReference Include="Telerik.ReportViewer.Wpf.Themes" Version="15.1.21.616" />
     <PackageReference Include="Telerik.Windows.Controls.GridView.for.Wpf" Version="2021.2.615" />
