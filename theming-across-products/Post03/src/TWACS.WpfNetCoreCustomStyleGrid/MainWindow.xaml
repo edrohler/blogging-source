@@ -1,0 +1,54 @@
+﻿<Window x:Class="TWACS.WpfNetCoreCustomStyleGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:tr="clr-namespace:Telerik.ReportViewer.Wpf;assembly=Telerik.ReportViewer.Wpf" 
+        xmlns:telerikReporting="clr-namespace:Telerik.Reporting;assembly=Telerik.Reporting"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:local="clr-namespace:TWACS.WpfNetCoreCustomStyleGrid"
+        mc:Ignorable="d"        
+        Title="Main Window" Height="800" Width="700">
+    <Grid>
+        <telerik:RadTabControl>
+            <telerik:RadTabControl.Items>
+                <telerik:RadTabItem Header="Grid">
+                    <telerik:RadGridView x:Name="RadGridView1" Loaded="RadGridView1_Loaded" AutoGenerateColumns="False" IsFilteringAllowed="False">
+                        <telerik:RadGridView.Columns>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Id}" IsVisible="False" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Name}" Header="Product Name" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding UnitPrice}" Header="Price" DataFormatString="{}{0:c}" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding Discontinued}" Header="Discontinued" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn DataMemberBinding="{Binding UnitsInStock}" Header="Units In Stock" IsFilterable="False" IsSortable="False" IsGroupable="False"></telerik:GridViewDataColumn>
+                            <telerik:GridViewDataColumn>
+                                <telerik:GridViewDataColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <telerik:RadButton Content="Edit" Margin="0,0,10,0" />
+                                            <telerik:RadButton Content="Cancel"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </telerik:GridViewDataColumn.CellTemplate>
+                            </telerik:GridViewDataColumn>
+                        </telerik:RadGridView.Columns>
+                    </telerik:RadGridView>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="Reports">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50px"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <telerik:RadComboBox x:Name="RadComboBox1" Grid.Row="0" Loaded="RadComboBox1_Loaded" SelectionChanged="RadComboBox1_SelectionChanged"></telerik:RadComboBox>
+                        <tr:ReportViewer x:Name="reportViewer1" Grid.Row="1" HorizontalAlignment="Stretch" EnableAccessibility="False"
+							         ReportEngineConnection="engine=RestService;uri=https://localhost:44380/api/reports">
+                            <tr:ReportViewer.ReportSource>
+                                <telerikReporting:UriReportSource Uri="Dashboard.trdp" />
+                            </tr:ReportViewer.ReportSource>
+                        </tr:ReportViewer>
+                    </Grid>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl.Items>
+        </telerik:RadTabControl>
+    </Grid>
+</Window>

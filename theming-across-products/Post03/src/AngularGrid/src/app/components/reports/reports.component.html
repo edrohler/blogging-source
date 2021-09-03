@@ -1,0 +1,13 @@
+<kendo-dropdownlist [data]="reportFiles" (selectionChange)="selectionChange($event)" [(ngModel)]="selectedReport"></kendo-dropdownlist>
+<br/>
+<br/>
+<tr-viewer #viewer1 
+    [containerStyle]="viewerContainerStyle"
+    [serviceUrl]="'https://localhost:44380/api/reports'"
+    [viewMode]="'INTERACTIVE'"
+    [scaleMode]="'SPECIFIC'"
+    [scale]="1.0"
+    [ready]="ready"
+    [viewerToolTipOpening]="viewerToolTipOpening"
+    [enableAccessibility]="false">
+</tr-viewer>

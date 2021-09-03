@@ -1,0 +1,57 @@
+﻿@page "/reports"
+@using Telerik.ReportViewer.Blazor
+@inject HttpClient HttpClient;
+
+<h2>Reports</h2>
+
+<style>
+    #rv1 {
+        position: relative;
+        width: 1000px;
+        height: 800px;
+    }
+</style>
+
+<TelerikDropDownList Data="@ReportList" Value="@SelectedReport" OnChange="ReportSelection"></TelerikDropDownList>
+<br />
+<br />
+<ReportViewer @ref="rv1" ViewerId="rv1"
+              ServiceUrl="/api/reports"
+              Parameters="@(new ParametersOptions { Editors = new EditorsOptions { MultiSelect = EditorType.ComboBox, SingleSelect = EditorType.ComboBox } })"
+              ScaleMode="@(ScaleMode.Specific)"
+              Scale="1.0" />
+
+@code {
+
+    public string SelectedReport { get; set; }
+    public List<string> ReportList { get; set; }
+    public ReportViewer rv1;
+    public ReportSourceOptions RSO { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        ReportList = await HttpClient.GetFromJsonAsync<List<string>>("/api/files");
+
+        SelectedReport = "Dashboard.trdp";
+
+        RSO = new ReportSourceOptions
+        {
+            Report = SelectedReport
+        };
+
+        await rv1.SetReportSourceAsync(RSO);
+        await rv1.RefreshReportAsync();
+    }
+
+    private async Task ReportSelection(object report)
+    {
+        SelectedReport = report.ToString();
+
+        RSO = new ReportSourceOptions
+        {
+            Report = SelectedReport
+        };
+
+        await rv1.SetReportSourceAsync(RSO);
+    }
+}
