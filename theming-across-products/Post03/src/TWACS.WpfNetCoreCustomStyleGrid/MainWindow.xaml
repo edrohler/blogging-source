@@ -46,7 +46,7 @@
                             See the launchSettings.json in that project for reference.
                         -->
                         <tr:ReportViewer x:Name="reportViewer1" Grid.Row="1" HorizontalAlignment="Stretch" EnableAccessibility="False"
-							         ReportEngineConnection="engine=RestService;uri=https://localhost:44380/api/reports">
+							         ReportEngineConnection="engine=RestService;uri=https://localhost:44395/api/reports">
                             <tr:ReportViewer.ReportSource>
                                 <telerikReporting:UriReportSource Uri="Dashboard.trdp" />
                             </tr:ReportViewer.ReportSource>

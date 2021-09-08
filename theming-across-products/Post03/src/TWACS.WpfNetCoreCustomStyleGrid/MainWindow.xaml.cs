@@ -33,7 +33,7 @@ namespace TWACS.WpfNetCoreCustomStyleGrid
                 This may change for each development environment.
                 See the launchSettings.json for what to change this to 
             */
-            string json = await new HttpClient().GetStringAsync("https://localhost:44380/api/files");
+            string json = await new HttpClient().GetStringAsync("https://localhost:44395/api/files");
             return JsonConvert.DeserializeObject<List<string>>(json);
         }
 
