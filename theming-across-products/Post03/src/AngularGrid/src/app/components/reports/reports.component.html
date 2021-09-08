@@ -1,6 +1,11 @@
 <kendo-dropdownlist [data]="reportFiles" (selectionChange)="selectionChange($event)" [(ngModel)]="selectedReport"></kendo-dropdownlist>
 <br/>
 <br/>
+<!-- 
+    The Report Viewer ServiceURL is set to the localhost and port of the TBACS.BlazorGridCustomStyle.Server project
+    This may change for each development environment.
+    See the launchSettings.json in that project for reference.
+-->
 <tr-viewer #viewer1 
     [containerStyle]="viewerContainerStyle"
     [serviceUrl]="'https://localhost:44380/api/reports'"
