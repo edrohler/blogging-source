@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Telerik.Reporting" Version="14.2.20.916" />
     <PackageReference Include="Telerik.Reporting.JsonSerialization" Version="14.2.20.916" />
     <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="14.2.20.916" />
