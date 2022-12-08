@@ -27,7 +27,7 @@
 </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Telerik.Windows.Controls.GridView.for.Wpf" Version="2021.2.615" />
     <PackageReference Include="Telerik.Windows.Themes.Material.for.Wpf" Version="2021.2.615" />
   </ItemGroup>
